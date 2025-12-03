@@ -12,7 +12,7 @@ const pageConfig: PageConfig = {
   links: [
     { link: 'https://github.com/szyinnovationstudio', label: 'GitHub' },
     { link: 'https://blog.szystudio.cn/', label: '博客' },
-    { link: 'mailto:support@szystudio.cn', label: '邮箱', highlight: true },
+    { link: 'mailto:support@szystudio.cn', label: '邮箱' },
     { link: 'https://www.szystudio.cn', label: '官网', highlight: true },
   ],
 }
@@ -66,18 +66,6 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare',
         Authorization: 'Bearer YOUR_TOKEN_HERE',
       },
-    },
-    // Example TCP Monitor
-    {
-      id: 'test_tcp_monitor',
-      name: 'Example TCP Monitor',
-      // `method` should be `TCP_PING` for tcp monitors
-      method: 'TCP_PING',
-      // `target` should be `host:port` for tcp monitors
-      target: '1.2.3.4:22',
-      tooltip: 'My production server SSH',
-      statusPageLink: 'https://example.com',
-      timeout: 5000,
     },
   ],
   // [Optional] Notification settings
