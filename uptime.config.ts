@@ -7,12 +7,13 @@ import { MaintenanceConfig, PageConfig, WorkerConfig } from './types/config'
 
 const pageConfig: PageConfig = {
   // Title for your status page
-  title: "lyc8503's Status Page",
+  title: "SZY创新工作室服务器状态",
   // Links shown at the header of your status page, could set `highlight` to `true`
   links: [
     { link: 'https://github.com/szyinnovationstudio', label: 'GitHub' },
-    { link: 'https://blog.szystudio.cn/', label: 'Blog' },
-    { link: 'mailto:support@szystudio.cn', label: 'Email Me', highlight: true },
+    { link: 'https://blog.szystudio.cn/', label: '博客' },
+    { link: 'mailto:support@szystudio.cn', label: '邮箱', highlight: true },
+    { link: 'https://www.szystudio.cn', label: '官网', highlight: true },
   ],
 }
 
@@ -24,15 +25,15 @@ const workerConfig: WorkerConfig = {
       // `id` should be unique, history will be kept if the `id` remains constant
       id: 'foo_monitor',
       // `name` is used at status page and callback message
-      name: 'My API Monitor',
+      name: '官网（主服务器）',
       // `method` should be a valid HTTP Method
       method: 'GET',
       // `target` is a valid URL
-      target: 'https://example.com',
+      target: 'https://www.szystudio.cn',
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
-      tooltip: 'This is a tooltip for this monitor',
+      tooltip: '这是SZY创新工作室的官网，如果此网站可访问则代表主服务器可访问',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://example.com',
+      statusPageLink: 'https://www.szystudio.cn',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
       expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
@@ -42,18 +43,29 @@ const workerConfig: WorkerConfig = {
         'User-Agent': 'Uptimeflare',
         Authorization: 'Bearer YOUR_TOKEN_HERE',
       },
-      // [OPTIONAL] body to be sent (require POST/PUT/PATCH method)
-      // body: 'Hello, world!',
-      // [OPTIONAL] if specified, the response must contains the keyword to be considered as operational.
-      // responseKeyword: 'success',
-      // [OPTIONAL] if specified, the response must NOT contains the keyword to be considered as operational.
-      // responseForbiddenKeyword: 'bad gateway',
-      // [OPTIONAL] if specified, will call the check proxy to check the monitor, mainly for geo-specific checks
-      // refer to docs https://github.com/lyc8503/UptimeFlare/wiki/Check-proxy-setup before setting this value
-      // currently supports `worker://`, `globalping://` and `http(s)://` proxies
-      // checkProxy: 'worker://weur',
-      // [OPTIONAL] if true, the check will fallback to local if the specified proxy is down
-      // checkProxyFallback: true,
+    },
+    {
+      // `id` should be unique, history will be kept if the `id` remains constant
+      id: 'foo_monitor',
+      // `name` is used at status page and callback message
+      name: '博客（备用服务器）',
+      // `method` should be a valid HTTP Method
+      method: 'GET',
+      // `target` is a valid URL
+      target: 'https://blog.szystudio.cn',
+      // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
+      tooltip: '这是SZY创新工作室的博客，如果此网站可访问则代表备用服务器可访问',
+      // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
+      statusPageLink: 'https://www.szystudio.cn',
+      // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
+      expectedCodes: [200],
+      // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
+      timeout: 10000,
+      // [OPTIONAL] headers to be sent
+      headers: {
+        'User-Agent': 'Uptimeflare',
+        Authorization: 'Bearer YOUR_TOKEN_HERE',
+      },
     },
     // Example TCP Monitor
     {
