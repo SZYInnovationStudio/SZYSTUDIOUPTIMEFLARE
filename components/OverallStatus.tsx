@@ -37,7 +37,7 @@ export default function OverallStatus({
     statusString = '所有系统运行正常'
     icon = <IconCircleCheck style={{ width: 64, height: 64, color: '#059669' }} />
   } else {
-    statusString = `部分系统无法运行， (${state.overallUp + state.overallDown} 分之 ${state.overallDown} 的系统无法运行 )`
+    statusString = `部分系统无法运行（${state.overallUp + state.overallDown} 个系统中有 ${state.overallDown} 个异常）`
   }
 
   const [openTime] = useState(Math.round(Date.now() / 1000))
@@ -87,24 +87,22 @@ export default function OverallStatus({
         {statusString}
       </Title>
       <Title mt="sm" style={{ textAlign: 'center', color: '#70778c' }} order={5}>
-        Last updated on:{' '}
-        {`${new Date(state.lastUpdate * 1000).toLocaleString()} (${
+        最后更新时间：{' '}
+        {`${new Date(state.lastUpdate * 1000).toLocaleString('zh-CN')}（${
           currentTime - state.lastUpdate
-        } sec ago)`}
+        } 秒前）`}
       </Title>
 
-      {/* Upcoming Maintenance */}
+      {/* 待执行的维护计划 */}
       {upcomingMaintenances.length > 0 && (
         <>
           <Title mt="4px" style={{ textAlign: 'center', color: '#70778c' }} order={5}>
-            {`${upcomingMaintenances.length} upcoming ${
-              upcomingMaintenances.length === 1 ? 'maintenance' : 'maintenances'
-            }`}{' '}
+            {`待执行的维护计划：${upcomingMaintenances.length} 项`}{' '}
             <span
               style={{ textDecoration: 'underline', cursor: 'pointer' }}
               onClick={() => setExpandUpcoming(!expandUpcoming)}
             >
-              {expandUpcoming ? '[Hide]' : '[Show]'}
+              {expandUpcoming ? '[收起]' : '[展开]'}
             </span>
           </Title>
 
@@ -121,7 +119,7 @@ export default function OverallStatus({
         </>
       )}
 
-      {/* Active Maintenance */}
+      {/* 正在执行的维护计划 */}
       {activeMaintenances.map((maintenance, idx) => (
         <MaintenanceAlert
           key={`active-${idx}`}
