@@ -44,7 +44,7 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              SZY创新工作室状态监控
+              SZYSTUDIO
             </div>
           </a>
         </div>
