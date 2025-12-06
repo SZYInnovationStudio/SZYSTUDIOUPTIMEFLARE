@@ -20,8 +20,7 @@ export default function MonitorDetail({
           {monitor.name}
         </Text>
         <Text mt="sm" fw={700}>
-          No data available, please make sure you have deployed your workers with latest config and
-          check your worker status!
+          暂无可用数据，请确认已部署最新配置的监控节点，并检查监控节点运行状态！
         </Text>
       </>
     )
@@ -37,7 +36,7 @@ export default function MonitorDetail({
       />
     )
 
-  // Hide real status icon if monitor is in maintenance
+  // 若监控项处于维护状态，隐藏真实状态图标
   const now = new Date()
   const hasMaintenance = maintenances
     .filter((m) => now >= new Date(m.start) && (!m.end || now <= new Date(m.end)))
@@ -62,7 +61,7 @@ export default function MonitorDetail({
 
   const uptimePercent = (((totalTime - downTime) / totalTime) * 100).toPrecision(4)
 
-  // Conditionally render monitor name with or without hyperlink based on monitor.url presence
+  // 根据是否存在监控项URL，条件渲染带/不带超链接的监控项名称
   const monitorNameElement = (
     <Text mt="sm" fw={700} style={{ display: 'inline-flex', alignItems: 'center' }}>
       {monitor.statusPageLink ? (
@@ -91,7 +90,7 @@ export default function MonitorDetail({
         )}
 
         <Text mt="sm" fw={700} style={{ display: 'inline', color: getColor(uptimePercent, true) }}>
-          Overall: {uptimePercent}%
+          整体可用率：{uptimePercent}%
         </Text>
       </div>
 
