@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Group, Image } from '@mantine/core'; // 移除无用的 useMantineTheme
+import { Container, Group, Image } from '@mantine/core';
 import classes from '@/styles/Header.module.css';
 import { pageConfig } from '@/uptime.config';
 import { PageConfigLink } from '@/types/config';
@@ -29,23 +29,19 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
             href={window.location.pathname == '/' ? 'https://www.szystudio.cn' : '/'}
             target={window.location.pathname == '/' ? '_blank' : undefined}
           >
-            {/* 核心修复：用原生媒体查询替代 Mantine theme.fn */}
+            {/* 极简修复：仅用固定宽度，无响应式 */}
             <div
               style={{
                 height: 56,
-                width: 140, // 移动端基础宽度
+                width: 140, // 固定宽度，也可设为 190
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: 'xl',
+                fontSize: '18px', // 替换 xl 为具体像素值
                 fontWeight: 700,
                 background: 'linear-gradient(90deg, blue, cyan)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                // 原生 CSS 媒体查询（匹配 Mantine sm 断点 640px）
-                '@media (min-width: 640px)': {
-                  width: 190, // 大屏宽度
-                },
               }}
             >
               SZY创新工作室状态监控
