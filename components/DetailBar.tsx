@@ -18,6 +18,7 @@ export default function DetailBar({
   const [modalTitle, setModalTitle] = useState('')
   const [modelContent, setModelContent] = useState(<div />)
 
+  // 计算两个区间的重叠长度
   const overlapLen = (x1: number, x2: number, y1: number, y2: number) => {
     return Math.max(0, Math.min(x2, y2) - Math.max(x1, y1))
   }
@@ -46,7 +47,7 @@ export default function DetailBar({
       const overlap = overlapLen(dayStart, dayEnd, incidentStart, incidentEnd)
       dayDownTime += overlap
 
-      // Incident history for the day
+      // 当日故障记录
       if (overlap > 0) {
         for (let i = 0; i < incident.error.length; i++) {
           let partStart = incident.start[i]
@@ -56,11 +57,11 @@ export default function DetailBar({
           partEnd = Math.min(partEnd, dayEnd)
 
           if (overlapLen(dayStart, dayEnd, partStart, partEnd) > 0) {
-            const startStr = new Date(partStart * 1000).toLocaleTimeString([], {
+            const startStr = new Date(partStart * 1000).toLocaleTimeString('zh-CN', {
               hour: '2-digit',
               minute: '2-digit',
             })
-            const endStr = new Date(partEnd * 1000).toLocaleTimeString([], {
+            const endStr = new Date(partEnd * 1000).toLocaleTimeString('zh-CN', {
               hour: '2-digit',
               minute: '2-digit',
             })
@@ -79,15 +80,15 @@ export default function DetailBar({
         events={{ hover: true, focus: false, touch: true }}
         label={
           Number.isNaN(Number(dayPercent)) ? (
-            'No Data'
+            '无数据'
           ) : (
             <>
-              <div>{dayPercent + '% at ' + new Date(dayStart * 1000).toLocaleDateString()}</div>
+              <div>{dayPercent + '% - ' + new Date(dayStart * 1000).toLocaleDateString('zh-CN')}</div>
               {dayDownTime > 0 && (
-                <div>{`Down for ${moment.preciseDiff(
+                <div>{`故障时长 ${moment.preciseDiff(
                   moment(0),
                   moment(dayDownTime * 1000)
-                )} (click for detail)`}</div>
+                )}（点击查看详情）`}</div>
               )}
             </>
           )
@@ -105,7 +106,7 @@ export default function DetailBar({
           onClick={() => {
             if (dayDownTime > 0) {
               setModalTitle(
-                `🚨 ${monitor.name} incidents at ${new Date(dayStart * 1000).toLocaleDateString()}`
+                `🚨 ${monitor.name} 故障记录 - ${new Date(dayStart * 1000).toLocaleDateString('zh-CN')}`
               )
               setModelContent(
                 <>
