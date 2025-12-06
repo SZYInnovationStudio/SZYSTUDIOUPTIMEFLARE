@@ -1,81 +1,41 @@
-<div align="right">
-  <a title="English" href="README.md"><img src="https://img.shields.io/badge/-English-A31F34?style=for-the-badge" alt="English" /></a>
-  <a title="简体中文" href="README_zh-CN.md"><img src="https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-545759?style=for-the-badge" alt="简体中文"></a>
-</div>
+# ✔[UptimeFlare ZHCN](https://github.com/lyc8503/UptimeFlare)
 
-# ✔[UptimeFlare](https://github.com/lyc8503/UptimeFlare)
+一个由 Cloudflare Workers 驱动的功能丰富、Serverless 且免费的 Uptime 监控及状态页面。
 
-A more advanced, serverless, and free uptime monitoring & status page solution, powered by Cloudflare Workers, complete with a user-friendly interface.
+由ShiZhongyan🍭翻译中文
 
-## ⭐Features
+本仓库已将原仓库99%英文界面以及英文注释翻译为中文，如有不足之处，欢迎提交Issue!
+## ⭐功能
 
-- Open-source, easy to deploy (in under 10 minutes, no local tools required), and free
-- Monitoring capabilities
-  - Up to 50 checks at 1-minute intervals
-  - Geo-specific checks from over [310 cities](https://www.cloudflare.com/network/) worldwide
-  - Support for HTTP/HTTPS/TCP port monitoring
-  - Up to 90-day uptime history and uptime percentage tracking
-  - Customizable request methods, headers, and body for HTTP(s)
-  - Custom status code & keyword checks for HTTP(s)
-  - Downtime notification supporting [100+ notification channels](https://github.com/caronc/apprise/wiki)
-  - Customizable Webhook
-- Status page
-  - Interactive ping (response time) chart for all types of monitors
-  - Scheduled maintenances alerts & Incident history page
-  - Responsive UI that adapts to your system theme
-  - Customizable status page
-  - Use your own domain with CNAME
-  - Optional password authentication (private status page)
-  - JSON API for fetching realtime status data
+- 开源，易于部署（全程无需本地工具，耗时不到 10 分钟），且完全免费
+- 监控功能
+  - 最多支持 50 个 1 分钟精度的检查
+  - 支持指定全球 [310+ 个城市](https://www.cloudflare.com/network/) 的监控节点
+  - 支持 HTTP/HTTPS/TCP 端口监控
+  - 最多 90 天的 uptime 历史记录和 uptime 百分比跟踪
+  - 可自定义的 HTTP(s) 请求方法、头和主体
+  - 可自定义的 HTTP(s) 状态码和关键字检查
+  - 支持 [100 多个通知渠道](https://github.com/caronc/apprise/wiki) 的宕机消息通知
+  - 可自定义的 Webhook
+- 状态页面
+  - 所有类型监控的交互式 ping（响应时间）图表
+  - 响应式 UI，自适应PC/手机屏幕，及亮色/暗色系统主题
+  - 配置选项丰富的状态页面
+  - 可使用您自己的域名与 CNAME
+  - 可选的密码认证（私人状态页面）
+  - 用于获取实时状态数据的 JSON API
 
-## 👀Demo
+## 👀演示
 
-My status page (Online demo): https://uptimeflare.pages.dev/
+我自己的状态页面（在线演示）：https://state.szystudio.cn
 
-Some screenshots:
+一些截图：
 
-![Desktop, Light theme](docs/desktop.png)
+![桌面，浅色主题](https://cdn.szyd.fun/shizhongyan/6933f22b64d37.png)
+![事件](https://cdn.szyd.fun/shizhongyan/6933f22b657a3.png)
+![简洁故障信息](https://cdn.szyd.fun/shizhongyan/6933f22b5cd70.png)
 
-## ⚡Quickstart / 📄Documentation
+## ⚡快速入门 / 📄文档
 
-Please refer to [Wiki](https://github.com/lyc8503/UptimeFlare/wiki)
-
-## 🚀Upgrade existing deployments
-
-Get the latest features right away with [simple upgrade process](https://github.com/lyc8503/UptimeFlare/wiki/Synchronize-updates-from-upstream)
-
-## ⚙️Docs for developer
-
-To contribute new features or customize your deployment furthermore, see [here](https://github.com/lyc8503/UptimeFlare/wiki/How-to-develop).
-
-## New features (TODOs)
-
-- [x] Specify region for monitors
-- [x] TCP `opened` promise
-- [x] Use apprise to support various notification channels
-- [x] ~~Telegram example~~
-- [x] ~~[Bark](https://bark.day.app) example~~
-- [x] ~~Email notification via Cloudflare Email Workers~~
-- [x] Improve docs by providing simple examples
-- [x] Notification grace period
-- [ ] SSL certificate checks
-- [x] ~~Self-host Dockerfile~~
-- [x] Incident history
-- [x] Improve `checkLocationWorkerRoute` and fix possible `proxy failed`
-- [x] Groups
-- [x] Remove old incidents
-- [x] ~~Known issue~~: `fetch` doesn't support non-standard port (resolved after CF update)
-- [x] Compatibility date update
-- [x] Scheduled Maintenance
-- [x] Add docs for dev
-- [ ] Migration to Terraform Cloudflare provider version 5.x
-- [ ] Cloudflare D1 database
-- [x] Scheduled maintenances (via IIFE)
-- [x] Simpler config example
-- [x] Upcoming maintenances
-- [x] Universal Webhook upgrade
-- [ ] i18n...? (maybe)
-- [ ] ICMP via proxy?
-- [x] Add default UA
-- [ ] Customizable footer
-- [ ] New header logo
+请先将本仓库克隆至您的账户，然后请参阅官方 [Wiki](https://github.com/lyc8503/UptimeFlare/wiki)
+在本仓库进行同步更改
