@@ -94,7 +94,7 @@ export default function IncidentsPage() {
           <Container size="md" style={{ width: '100%' }}>
             <Group justify="end" mb="md">
               <Select
-                placeholder="Select monitor"
+                placeholder="选择显示器"
                 data={monitorOptions}
                 value={selectedMonitor}
                 onChange={setSelectedMonitor}
