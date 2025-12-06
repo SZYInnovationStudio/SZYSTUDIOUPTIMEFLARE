@@ -1,13 +1,10 @@
 import React from 'react';
-import { Container, Group, Image, useMantineTheme } from '@mantine/core'; // 新增 useMantineTheme
+import { Container, Group, Image } from '@mantine/core'; // 移除无用的 useMantineTheme
 import classes from '@/styles/Header.module.css';
 import { pageConfig } from '@/uptime.config';
 import { PageConfigLink } from '@/types/config';
 
 export default function Header({ style }: { style?: React.CSSProperties }) {
-  // 使用 Mantine 主题钩子获取响应式断点
-  const theme = useMantineTheme();
-  
   const linkToElement = (link: PageConfigLink, i: number) => {
     return (
       <a
@@ -32,12 +29,11 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
             href={window.location.pathname == '/' ? 'https://www.szystudio.cn' : '/'}
             target={window.location.pathname == '/' ? '_blank' : undefined}
           >
-            {/* 修复：用媒体查询实现响应式宽度，替代对象格式 */}
+            {/* 核心修复：用原生媒体查询替代 Mantine theme.fn */}
             <div
               style={{
                 height: 56,
-                // 基础宽度 + 媒体查询响应式调整（匹配 Mantine 的 sm 断点）
-                width: 140,
+                width: 140, // 移动端基础宽度
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -46,9 +42,9 @@ export default function Header({ style }: { style?: React.CSSProperties }) {
                 background: 'linear-gradient(90deg, blue, cyan)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                // Mantine sm 断点默认是 640px，这里用 theme 确保一致性
-                [theme.fn.largerThan('sm')]: {
-                  width: 190,
+                // 原生 CSS 媒体查询（匹配 Mantine sm 断点 640px）
+                '@media (min-width: 640px)': {
+                  width: 190, // 大屏宽度
                 },
               }}
             >
