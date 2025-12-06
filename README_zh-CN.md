@@ -1,12 +1,10 @@
-<div align="right">
-  <a title="English" href="README.md"><img src="https://img.shields.io/badge/-English-545759?style=for-the-badge" alt="English"></a>
-  <a title="简体中文" href="README_zh-CN.md"><img src="https://img.shields.io/badge/-%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-A31F34?style=for-the-badge" alt="简体中文"></a>
-</div>
-
-# ✔[UptimeFlare](https://github.com/lyc8503/UptimeFlare)
+# ✔[UptimeFlare ZHCN](https://github.com/lyc8503/UptimeFlare)
 
 一个由 Cloudflare Workers 驱动的功能丰富、Serverless 且免费的 Uptime 监控及状态页面。
 
+由ShiZhongyan🍭翻译中文
+
+本仓库已将原仓库99%英文界面以及英文注释翻译为中文，如有不足之处，欢迎提交Issue!
 ## ⭐功能
 
 - 开源，易于部署（全程无需本地工具，耗时不到 10 分钟），且完全免费
@@ -29,12 +27,15 @@
 
 ## 👀演示
 
-我自己的状态页面（在线演示）：https://uptimeflare.pages.dev/
+我自己的状态页面（在线演示）：https://state.szystudio.cn
 
 一些截图：
 
-![桌面，浅色主题](docs/desktop.png)
+![桌面，浅色主题](https://cdn.szyd.fun/shizhongyan/6933f22b64d37.png)
+![事件](https://cdn.szyd.fun/shizhongyan/6933f22b657a3.png)
+![简洁故障信息](https://cdn.szyd.fun/shizhongyan/6933f22b5cd70.png)
 
 ## ⚡快速入门 / 📄文档
 
-请参阅 [Wiki](https://github.com/lyc8503/UptimeFlare/wiki)
+请先将本仓库克隆至您的账户，然后请参阅官方 [Wiki](https://github.com/lyc8503/UptimeFlare/wiki)
+在本仓库进行同步更改
