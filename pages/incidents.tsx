@@ -113,13 +113,13 @@ export default function IncidentsPage() {
             </Box>
             <Group justify="space-between" mt="md">
               <Button variant="default" onClick={() => (window.location.hash = prev)}>
-                ← Backwards
+                ← 向后
               </Button>
               <Box style={{ alignSelf: 'center', fontWeight: 500, fontSize: 18 }}>
                 {selectedMonth}
               </Box>
               <Button variant="default" onClick={() => (window.location.hash = next)}>
-                Forward →
+                向前 →
               </Button>
             </Group>
           </Container>
