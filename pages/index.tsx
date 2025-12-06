@@ -28,12 +28,12 @@ export default function Home({
     state = JSON.parse(stateStr) as MonitorState
   }
 
-  // Specify monitorId in URL hash to view a specific monitor (can be used in iframe)
+  // 在URL哈希中指定监控项ID以查看特定监控项（可用于iframe嵌入场景）
   const monitorId = window.location.hash.substring(1)
   if (monitorId) {
     const monitor = monitors.find((monitor) => monitor.id === monitorId)
     if (!monitor || !state) {
-      return <Text fw={700}>Monitor with id {monitorId} not found!</Text>
+      return <Text fw={700}>未找到ID为 {monitorId} 的监控项！</Text>
     }
     return (
       <div style={{ maxWidth: '810px' }}>
@@ -55,8 +55,7 @@ export default function Home({
         {state == undefined ? (
           <Center>
             <Text fw={700}>
-              Monitor State is not defined now, please check your worker&apos;s status and KV
-              binding!
+              监控状态未定义，请检查监控节点运行状态及KV绑定配置！
             </Text>
           </Center>
         ) : (
@@ -77,10 +76,10 @@ export async function getServerSideProps() {
     UPTIMEFLARE_STATE: KVNamespace
   }
 
-  // Read state as string from KV, to avoid hitting server-side cpu time limit
+  // 从KV中读取字符串格式的状态数据，避免触发服务端CPU时间限制
   const state = (await UPTIMEFLARE_STATE?.get('state')) as unknown as MonitorState
 
-  // Only present these values to client
+  // 仅将这些字段暴露给客户端
   const monitors = workerConfig.monitors.map((monitor) => {
     return {
       id: monitor.id,
