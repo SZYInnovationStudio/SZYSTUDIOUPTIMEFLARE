@@ -55,7 +55,7 @@ const workerConfig: WorkerConfig = {
       // [OPTIONAL] `tooltip` is ONLY used at status page to show a tooltip
       tooltip: '这是SZY创新工作室的博客，如果此网站可访问则代表备用服务器可访问',
       // [OPTIONAL] `statusPageLink` is ONLY used for clickable link at status page
-      statusPageLink: 'https://www.szystudio.cn',
+      statusPageLink: 'https://blog.szystudio.cn',
       // [OPTIONAL] `expectedCodes` is an array of acceptable HTTP response codes, if not specified, default to 2xx
       expectedCodes: [200],
       // [OPTIONAL] `timeout` in millisecond, if not specified, default to 10000
