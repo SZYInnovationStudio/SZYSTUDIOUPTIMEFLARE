@@ -31,9 +31,9 @@
 
 一些截图：
 
-![桌面，浅色主题](https://cdn.szyd.fun/shizhongyan/6933f22b64d37.png)
-![事件](https://cdn.szyd.fun/shizhongyan/6933f22b657a3.png)
-![简洁故障信息](https://cdn.szyd.fun/shizhongyan/6933f22b5cd70.png)
+![桌面，浅色主题](https://szycdn.szyd.fun/shizhongyan/6933f22b64d37.png)
+![事件](https://szycdn.szyd.fun/shizhongyan/6933f22b657a3.png)
+![简洁故障信息](https://szycdn.szyd.fun/shizhongyan/6933f22b5cd70.png)
 
 ## ⚡快速入门 / 📄文档
 
