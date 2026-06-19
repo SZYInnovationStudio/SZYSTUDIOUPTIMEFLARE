@@ -27,7 +27,7 @@
 
 ## 👀演示
 
-我自己的状态页面（在线演示）：[https://state.szystudio.cn](https://status.szystudio.cn/)
+我自己的状态页面（在线演示）：[https://status.szystudio.cn](https://status.szystudio.cn/)
 
 一些截图：
 
