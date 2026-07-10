@@ -18,9 +18,19 @@
 ![图片](https://free.picui.cn/free/2026/07/11/6a5129e30f210.png)
 ![图片](https://free.picui.cn/free/2026/07/11/6a512a368b0ca.png)
 -2.github配置
-
-## ⚡快速入门 / 📄文档
-
-请先将本仓库克隆至您的账户，然后请参阅官方 [Wiki](https://github.com/lyc8503/UptimeFlare/wiki)
-在本仓库进行同步更改
-
+你需要Fork本仓库（不放图片了）
+之后，在setings- secrets and variables-第一个选项- new repo secret
+![图片](https://free.picui.cn/free/2026/07/11/6a512b94d1464.png)
+Name 的值是 CLOUDFLARE_API_TOKEN ③ Secret 的值是在CF获得的 Token 值
+![图片](https://free.picui.cn/free/2026/07/11/6a512bd748f89.png)
+回到仓库主页，点击 Action 点一下绿色的框框，就不用管了
+添加！
+-3.改为自己的网站
+在git仓库列表中你会看见名为uptime.config.ts的文件
+找到  title: "xxx服务器状态",    (行，10) 修改
+找到  27-35行 按需求修改
+![图片](https://free.picui.cn/free/2026/07/11/6a512d206c8be.png)
+保存
+自动流生效部署，去cf的 worker and pages 刷新下，会有链接
+[END]
+##有用就给项目点个star吧，求求了！！！
